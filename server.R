@@ -20,7 +20,15 @@ server <- function(input, output, session)
 			})
 			appendTab(inputId = "tabset",
 				tabPanel("Simulation", 			
-				isolate(actionButton("simulation", "Comparison to simulation!"))
+				isolate(actionButton("bSimulation", "Simulation"))
+			))
+			appendTab(inputId = "tabset",
+				tabPanel("Centrality", 			
+				isolate(actionButton("bCentrality", "Centrality"))
+			))
+			appendTab(inputId = "tabset",
+				tabPanel("Orthology", 			
+				isolate(actionButton("bOrthology", "Orthology"))
 			))
 		}
 	})

@@ -1,3 +1,4 @@
+library(d3heatmap)
 library(shiny)
 library(shinyalert)
 library(shinyBS)
@@ -14,7 +15,7 @@ tags$head(
 	visibility: hidden;
 }
 body {
-	background-color: #23443333;
+	#background-color: #23443333;
 }
 body, label, input, button, select { 
 	font-family: 'Arial';
@@ -25,10 +26,12 @@ body, label, input, button, select {
 		sidebarPanel(
 		tabsetPanel(id = "tabset",
 		tabPanel("Analysis of protein-protein data",
-			fileInput("file1", "Choose inter-species protein-protein data", multiple = TRUE, accept = c("text/text", ".txt")),
-			fileInput("file2", "Choose intra-species protein-protein data", multiple = TRUE, accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv")),
-			fileInput("file3", "Search space", multiple=TRUE, accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv")),
-			actionButton("preload", "Preload datasets!"),
+			fileInput("file1", "A.Inter-species protein-protein data (required)", multiple = TRUE, accept = c("text/text", ".txt")),
+			fileInput("file2", "B.Intra-species protein-protein data (required)", multiple = TRUE, accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv")),
+			fileInput("file3", "C.Search space (required)", multiple=TRUE, accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv")),
+			fileInput("file4", "D.Centrality Measurements (optional)", multiple=TRUE, accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv")),
+			fileInput("file5", "E.Orthologous groups (optinal)", multiple=TRUE, accept = c("text/csv", "text/comma-separated-values,text/plain", ".csv")),
+			actionButton("preload", "Preload Arabidopsis thaliana!"),
 			actionButton("goButton", "Analyse dataset!")
 		)
 		)
@@ -36,7 +39,8 @@ body, label, input, button, select {
 		mainPanel(
 			useShinyjs(),
 			plotOutput(outputId = "plot"),
-			dataTableOutput('table')
+			dataTableOutput('table'),
+			d3heatmapOutput("heatmap", width = "75%", height="300px")
 		)
 	)
 )

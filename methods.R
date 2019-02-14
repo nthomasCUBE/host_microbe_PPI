@@ -10,8 +10,7 @@ make_pie=function(v){
 	print(A[1:5])
 	A=length(unique(A))
 
-	B=(unique(v$microbe_host_interactions[,1]))
-	B=unlist(strsplit(B,"\\."))
+	B=(unique(v$microbe_host_interactions[,2]))
 	B=B[seq(1,length(B),2)]
 	B=length(B)
 	AB=A[B%in%A]
@@ -42,8 +41,7 @@ interactome_analysis=function(cur_f, host_microbe, search_space_1, v){
 do_bCentrality=function(v){
 	print(paste0("INFO|do_bCentrality"))
 	data=read.csv(v$file4,sep="\t",header=T,dec=",")
-	my_genes=v$microbe_host_interactions[,1]
-	my_genes=unlist(strsplit(my_genes,"\\."))
+	my_genes=v$microbe_host_interactions[,2]
 	my_genes=my_genes[seq(1,length(my_genes),2)]
 	#boxplot(log(data[,c(4,5,6,7)]),outline=F)
 	ix=which(my_genes%in%data[,"name"])
@@ -74,10 +72,9 @@ do_bCentrality=function(v){
 do_bSimulation=function(v){
 	my_genes=v$search_space_1
 	my_genes=unique(my_genes)
-	N=length(v$microbe_host_interactions[,1])
-	N_d=length(unique(v$microbe_host_interactions[,1]))
-	INTER1=unique(v$microbe_host_interactions[,1])
-	INTER1=unlist(strsplit(INTER1,"\\."))
+	N=length(v$microbe_host_interactions[,2])
+	N_d=length(unique(v$microbe_host_interactions[,2]))
+	INTER1=unique(v$microbe_host_interactions[,2])
 	INTER1=INTER1[seq(1,length(INTER1),2)]
 	obs=c()
 	for(i in 1:v$itr){
@@ -115,8 +112,7 @@ do_bOrthology=function(v,o){
 	print(paste0("INFO|bOrthology"))
 	data=read.csv("arabidopsis/0_extract_arath.txt",header=TRUE,sep="\t")
 	if(v$orthoOptions=="inter"){
-		my_genes=v$microbe_host_interactions[,1]
-		my_genes=unlist(strsplit(my_genes,"\\."))
+		my_genes=v$microbe_host_interactions[,2]
 		my_genes=my_genes[seq(1,length(my_genes),2)]
 		data=subset(data,data[,2]%in%my_genes)
 		print(dim(data))

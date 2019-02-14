@@ -122,7 +122,7 @@ server <- function(input, output, session)
 		print("server::preload")
 		source("methods.R")
 		v$file1="arabidopsis/NIHMS316063-supplement-Table_S4.txt"
-		v$file2="arabidopsis/Piriformospora_indica.txt"
+		v$file2="arabidopsis/interspecies_dataset1_Mukhtar_et_al_2009.txt"
 		v$file3="arabidopsis/Search_Space_1.txt"
 		v$file4="arabidopsis/CentralityMeasurements.txt"
 		v$file5="arabidopsis/0_extract_arath.txt"

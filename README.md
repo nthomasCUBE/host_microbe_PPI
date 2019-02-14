@@ -11,22 +11,22 @@ and allows to compare centrality measurements between intra- and inter-species P
 
 In order to execute host_microbe_PPI you need to install following R packages:
 ```
-library(d3heatmap)\
-library(gplots)\
-library(scales)\
-library(shiny)\
-library(shinyalert)\
-library(shinyBS)\
-library(shinyjs)\
-library(shinythemes)\
+library(d3heatmap)
+library(gplots)
+library(scales)
+library(shiny)
+library(shinyalert)
+library(shinyBS)
+library(shinyjs)
+library(shinythemes)
 library(xlsx)
 ```
 
 If the packages are installed, it can be executed via
 
 ```
-library("ui.R)\
-library("methods.R")\
-library("source.R")\
+library("ui.R)
+library("methods.R")
+library("source.R")
 shinyApp(ui,server)
 ```

@@ -7,6 +7,10 @@ is available.
 It allows to compare interspecies PPI to the simulation, allows to analyse the conservatio of orthologs if available
 and allows to compare centrality measurements between intra- and inter-species PPI datasets.
 
+Data was integrated from various resources such as the [Interactome](http://science.sciencemag.org/content/333/6042/601), [Pseudomonas/Hyaloperonospora arabopsidis - A.thaliana Y2H](http://science.sciencemag.org/content/333/6042/596)
+as well as [Golovinomyces orontii - A.thaliana Y2H](https://www.sciencedirect.com/science/article/pii/S1931312814002960).
+
+
 ## Installation and start
 
 **In order to execute host_microbe_PPI you need to install following R packages:**

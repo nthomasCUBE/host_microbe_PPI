@@ -13,10 +13,10 @@ library(shinyalert)\
 library(shinyBS)\
 library(shinyjs)\
 library(shinythemes)\
-library(xlsx)\
+library(xlsx)
 
 If the packages are installed, it can be executed via
 
 library("ui.R)\
 library("source.R")\
-shinyApp(ui,server)\
+shinyApp(ui,server)

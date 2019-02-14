@@ -121,11 +121,11 @@ server <- function(input, output, session)
 	observeEvent(input$preload,{
 		print("server::preload")
 		source("methods.R")
-		v$file1="arabidopsis/NIHMS316063-supplement-Table_S4.txt"
-		v$file2="arabidopsis/interspecies_dataset1_Mukhtar_et_al_2009.txt"
-		v$file3="arabidopsis/Search_Space_1.txt"
-		v$file4="arabidopsis/CentralityMeasurements.txt"
-		v$file5="arabidopsis/0_extract_arath.txt"
+		v$file1="arabidopsis/A.NIHMS316063-supplement-Table_S4.txt"
+		v$file2="arabidopsis/B.interspecies_dataset1_Mukhtar_et_al_2009.txt"
+		v$file3="arabidopsis/C.Search_Space_1.txt"
+		v$file4="arabidopsis/D.CentralityMeasurements.txt"
+		v$file5="arabidopsis/E.0_extract_arath.txt"
 	})
 
 	observeEvent(input$preload2,{

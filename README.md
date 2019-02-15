@@ -10,6 +10,7 @@ and allows to compare centrality measurements between intra- and inter-species P
 Data was integrated from various resources such as the [Interactome](http://science.sciencemag.org/content/333/6042/601), [Pseudomonas/Hyaloperonospora arabopsidis - A.thaliana Y2H](http://science.sciencemag.org/content/333/6042/596)
 as well as [Golovinomyces orontii - A.thaliana Y2H](https://www.sciencedirect.com/science/article/pii/S1931312814002960).
 
+![host_microbe_PPI](https://github.com/nthomasCUBE/host_microbe_PPI/blob/master/pix/figure-github.png)
 
 ## Installation and start
 

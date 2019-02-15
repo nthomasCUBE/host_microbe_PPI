@@ -4,7 +4,7 @@ host_microbe_PPI is a tool that allows for **compare interspecies protein-protei
 with other microbes against the interactome of protein-protein interaction *Arabidopsis thaliana*.
 Even so the demo data is using *A.thaliana*, it can be also used for other species where intra- and inter-species PPI
 is available.
-It allows to compare interspecies PPI to the simulation, allows to analyse the conservatio of orthologs if available
+It allows to compare interspecies PPI to the simulation, allows to analyse the conservation of orthologs if available
 and allows to compare centrality measurements between intra- and inter-species PPI datasets.
 
 Data was integrated from various resources such as the [Interactome](http://science.sciencemag.org/content/333/6042/601), [Pseudomonas/Hyaloperonospora arabopsidis - A.thaliana Y2H](http://science.sciencemag.org/content/333/6042/596)

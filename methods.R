@@ -38,6 +38,11 @@ interactome_analysis=function(cur_f, host_microbe, search_space_1, v){
 }
 
 do_bCentrality=function(v){
+
+	shinyjs::hide("heatmap")
+	shinyjs::show("table")
+	shinyjs::show("plot")
+
 	print(paste0("INFO|do_bCentrality"))
 	data=read.csv(v$file4,sep="\t",header=T,dec=",")
 	my_genes=v$microbe_host_interactions[,2]
@@ -69,6 +74,11 @@ do_bCentrality=function(v){
 }
 
 do_bSimulation=function(v){
+
+	shinyjs::hide("heatmap")
+	shinyjs::hide("table")
+	shinyjs::show("plot")
+
 	my_genes=v$search_space_1
 	my_genes=unique(my_genes)
 	N=length(v$microbe_host_interactions[,2])
@@ -105,6 +115,11 @@ do_bSimulation=function(v){
 }
 
 do_bOrthology=function(v,o){
+
+	shinyjs::show("heatmap")
+	shinyjs::hide("table")
+	shinyjs::show("plot")
+
 	print(paste0("INFO|bOrthology"))
 	data=read.csv(v$file5,header=TRUE,sep="\t")
 	if(v$orthoOptions=="inter"){

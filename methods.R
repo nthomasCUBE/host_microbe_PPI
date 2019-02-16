@@ -110,7 +110,7 @@ do_bSimulation=function(v){
 
 do_bOrthology=function(v,o){
 	print(paste0("INFO|bOrthology"))
-	data=read.csv("arabidopsis/0_extract_arath.txt",header=TRUE,sep="\t")
+	data=read.csv(v$file5,header=TRUE,sep="\t")
 	if(v$orthoOptions=="inter"){
 		my_genes=v$microbe_host_interactions[,2]
 		my_genes=my_genes[seq(1,length(my_genes),2)]

@@ -95,7 +95,10 @@ do_bSimulation=function(v){
 		par(mfrow=c(1,2))	
 	}
 	h=hist(obs,breaks=1000,xlim=c(0,max(obs,N_d)),main="Are there more/less targets than expected?",xlab="#host proteins",ylab="rel frequency")
-	arrows(N_d,0,N_d,50,code=1)	
+	arrows(N_d,0,N_d,50,code=1)
+	my_p=round(length(obs[obs<N_d])/length(obs),10)
+	text(N_d,80,paste0("observed, p<",my_p))
+	text(max(obs,N_d),80,"Simulation")
 	if(!is.null(v$file6)){
 		data=read.csv(v$file6,sep="\t",header=T)
 		INTER2=data[,2]
@@ -111,6 +114,10 @@ do_bSimulation=function(v){
 		}
 		h=hist(obs,breaks=1000,xlim=c(0,max(obs,INTER12)),main="Are there more host proteins targeted in both than expected?",xlab="#host proteins",ylab="rel frequency")		
 		arrows(INTER12,0,INTER12,50,code=1)	
+		my_p=round(length(obs[obs<INTER12])/length(obs),10)
+		text(INTER12,80,paste0("observed, p<",my_p))
+		text(mean(obs),80,"Simulation")
+
 	}
 }
 

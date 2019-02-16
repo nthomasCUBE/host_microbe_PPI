@@ -9,7 +9,7 @@ server <- function(input, output, session)
 {
 	v <- reactiveValues(file1=NULL, itr=NULL, file2=NULL, file3=NULL, interactome=NA,microbe_host_interactions=NA)
 	
-	observeEvent(input$goButton,{
+	run_go_button=function(){
 		print("server::goButton::observe")
 		source("methods.R")
 		if(!is.null(v$file1) & !is.null(v$file2) & !is.null(v$file3)){
@@ -42,6 +42,11 @@ server <- function(input, output, session)
 				isolate(actionButton("bOrthology", "Orthology"))
 			))
 		}
+
+	}
+	
+	observeEvent(input$goButton,{
+		run_go_button()
 	})
 
 	observeEvent(input$orthoOptions,{
@@ -126,6 +131,8 @@ server <- function(input, output, session)
 		v$file3="arabidopsis/C.Search_Space_1.txt"
 		v$file4="arabidopsis/D.CentralityMeasurements.txt"
 		v$file5="arabidopsis/E.0_extract_arath.txt"
+		shinyalert("Arabidopsis data has been added into host_microbe_PPI", type = "info")
+		run_go_button()
 	})
 
 	observeEvent(input$preload2,{

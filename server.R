@@ -72,8 +72,7 @@ server <- function(input, output, session)
 			my_table=do_bCentrality(v)
 			output$table <- renderDataTable(my_table,
 				options = list(
-				  pageLength = 5,
-				  initComplete = I("function(settings, json) {alert('Done.');}")
+				  pageLength = 5
 				)
 			)
 		})
@@ -152,7 +151,10 @@ server <- function(input, output, session)
 		M=(my_ret[[2]])
 		x=100.0*apply(M,2,sum)/dim(M)[1]
 		output$plot <- renderPlot({
-			print(barplot(x,ylim=c(0,100),ylab="% conserved orthologs"),ylim=c(0,100),ylab="% of total")
+			print(barplot(x,ylim=c(0,100),col=2:(length(x)+1),ylab="% conserved orthologs"),ylim=c(0,100),ylab="% of total")
+			abline(h=40,lty=2)
+			abline(h=60,lty=3)
+			abline(h=80,lty=4)
 		})
 	})
 }

@@ -7,7 +7,6 @@ options(stringsAsFactors=FALSE)
 
 make_pie=function(v){
 	A=unique(c(v$interactome[,1],v$interactome[,2]))
-	print(A[1:5])
 	A=length(unique(A))
 
 	B=(unique(v$microbe_host_interactions[,2]))
@@ -47,17 +46,17 @@ do_bCentrality=function(v){
 	ix=which(my_genes%in%data[,"name"])
 	par(mfrow=c(1,2))
 	if(v$bCentralityNorm=="normalize"){
-		for(x in 4:7){
+		for(x in 4:6){
 			dd=data[,x]
 			dd=dd[!is.na(dd)]
 			dd=(data[,x]-mean(dd))/(sd(dd))
 			data[,x]=dd
 		}
 	}
-	boxplot(log(data[-ix,c(4,5,6,7)]),outline=F,main="interactome (excl. intraspecies PPI)")
-	boxplot(log(data[ix,c(4,5,6,7)]),outline=F,main="intraspecies PPI - host proteins")
+	boxplot((data[-ix,c(4,5,6)]),col=2:4,outline=F,main="interactome (excl. intraspecies PPI)")
+	boxplot((data[ix,c(4,5,6)]),col=2:4,outline=F,main="intraspecies PPI - host proteins")
 	df=data.frame()
-	for(x in 4:7){
+	for(x in 4:6){
 		A=data[-ix,x]
 		B=data[ix,x]
 		A=A[!is.na(A)]
@@ -81,9 +80,6 @@ do_bSimulation=function(v){
 		el=sample(1:length(my_genes),N,replace=TRUE)
 		el=length(unique(el))
 		obs=c(obs,el)
-		if(i%%1000==0){
-			print(paste0("iterations|",i))
-		}
 	}
 	if(!is.null(v$file6)){
 		par(mfrow=c(1,2))	
@@ -115,14 +111,12 @@ do_bOrthology=function(v,o){
 		my_genes=v$microbe_host_interactions[,2]
 		my_genes=my_genes[seq(1,length(my_genes),2)]
 		data=subset(data,data[,2]%in%my_genes)
-		print(dim(data))
 	}else{
 		my_genes=((v$interactome))
 		my_genes=subset(my_genes,my_genes[,3]==1 | my_genes[,4]==1)
 		my_genes=c(my_genes[,1],my_genes[,2])
 		my_genes=unique(my_genes)
 		data=subset(data,data[,2]%in%my_genes)
-		print(dim(data))
 	}
 
 	MAT=as.matrix(data[,3:dim(data)[2]])

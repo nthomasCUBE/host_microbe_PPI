@@ -27,7 +27,7 @@ library(shinythemes)
 library(xlsx)
 ```
 
-**If the packages are installed, it can be executed via**
+## If the packages are installed, it can be executed via**
 
 ```
 library("ui.R)
@@ -36,21 +36,21 @@ library("source.R")
 shinyApp(ui,server)
 ```
 
-** SinyIO Instance
+## SinyIO Instance
 
 There is also a [ShinyIO](https://nthomascube.shinyapps.io/host_microbe_ppi/) available
 where the current code is loaded.
 
-** Input files
+## Input files
 
-*** A.Inter-species protein-protein data (required)
+### A.Inter-species protein-protein data (required)
 Containing the protein-protein interactions in *Arabidopsis thaliana*.
-*** B.Intra-species protein-protein data (required)
+### B.Intra-species protein-protein data (required)
 Containing the protein-protein interactions between the microbe and *Arabidopsis thaliana*
-*** C.Search space (required)
+### C.Search space (required)
 Genes, that were used to determine potential protein-protein interacctions.
-*** D.Centrality Measurements (optional)
+### D.Centrality Measurements (optional)
 Contains information of centrality measurements such as degree, betweenness and closeness centrality measurements.
-*** E.Orthologous groups (optinal)
+### E.Orthologous groups (optinal)
 From the [OMA resource](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5753216/), the orthologous protein assignments between *Arabidopsis thaliana* to othe
 monocots and dicots.

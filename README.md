@@ -48,7 +48,7 @@ Containing the protein-protein interactions in *Arabidopsis thaliana*.
 ### B.Intra-species protein-protein data (required)
 Containing the protein-protein interactions between the microbe and *Arabidopsis thaliana*
 ### C.Search space (required)
-Genes, that were used to determine potential protein-protein interacctions.
+Genes, that were used to determine potential protein-protein interactions.
 ### D.Centrality Measurements (optional)
 Contains information of centrality measurements such as degree, betweenness and closeness centrality measurements.
 ### E.Orthologous groups (optinal)
